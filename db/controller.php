@@ -3,9 +3,7 @@
 // include "./connection.php";
 include __DIR__ . '/connection.php';
 
-
 $conx = DbConnection();
-
 
 function List_des_villes($conx)
 {
@@ -22,31 +20,4 @@ function List_des_villes($conx)
     return $result->num_rows > 0 ? $result : null;
 }
 
-// function displayListHtml($data)
-// {
-//     if ($data) {
-//         echo "
-//         <table border=1 style='width:100%;text-align:center'>
-//             <tr>
-//                 <th>Ville</th>
-//                 <th>Type</th>
-//                 <th>Pays</th>
-//             </tr>
-//         ";
-//         while ($row = $data->fetch_assoc()) {
-//             echo "<tr>
-//                 <td>$row[ville_nom]</td>
-//                 <td>$row[type]</td>
-//                 <td>$row[pays_nom]</td>
-//             </tr>";
-//         }
-//         echo "</table>";
-//     }
-// }
-
 $data = List_des_villes($conx);
-
-
-
-
-// displayListHtml($data);
