@@ -1,9 +1,8 @@
 <?php
 
-include ".\db\controller.php";
-// displayListHtml($data);
+include "../db/controller.php";
 
-
+$pays = Pays_list($conx);
 
 ?>
 
@@ -34,10 +33,10 @@ include ".\db\controller.php";
     <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -46,7 +45,7 @@ include ".\db\controller.php";
         <div class="container-fluid bg-dark px-0 py-3">
             <div class="row gx-0" id="row_header">
                 <div class="col-md-3">
-                    <a href="/index.php"
+                    <a href="../index.php"
                         class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-start">
                         <h5 class="m-0 text-primary text-uppercase">Africa Géo-Junior</h5>
                     </a>
@@ -59,15 +58,16 @@ include ".\db\controller.php";
                         </button>
                         <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
                             <div class="navbar-nav py-0">
-                                <a href="/index.php" class="nav-item nav-link active">Villes</a>
-                                <a href="./pages/listPays.php" class="nav-item nav-link active">Pays</a>
+                                <a href="../index.php" class="nav-item nav-link active">Villes</a>
+                                <a href="index.html" class="nav-item nav-link active">Pays</a>
 
                             </div>
                         </div>
                     </nav>
                 </div>
                 <div class="col-md-3 d-flex align-items-center justify-content-end">
-                    <a href="/index.php" class="btn btn-primary rounded-lg py-2  px-md-5 d-none d-lg-block">LOGIN
+                    <a href="https://htmlcodex.com/hotel-html-template-pro"
+                        class="btn btn-primary rounded-lg py-2  px-md-5 d-none d-lg-block">LOGIN
                         <i class="fa fa-arrow-right ms-3"></i>
                     </a>
                 </div>
@@ -76,57 +76,57 @@ include ".\db\controller.php";
         <!-- Header End -->
 
         <!-- Room Start -->
-        <?php if (isset($_GET['msg'])): ?>
-            <div class="alert alert-success alert-dismissible d-flex justify-content-around fade show text-center font-weight-bold"
-                role="alert">
-                <?php echo htmlspecialchars($_GET['msg']); ?>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="all: unset;">
-                    <span aria-hidden="true">X</span>
-                </button>
-            </div>
-        <?php endif; ?>
-
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="d-flex justify-content-between align-items-center wow fadeInUp mb-5" data-wow-delay="0.1s">
-                    <div class="text-center">
-                        <h1 class=""><span class="text-primary text-uppercase mx-1">Africa'</span>S<span
-                                class="text-primary text-uppercase mx-1">Villes</span></h1>
-                    </div>
-                    <div class="text-end">
-                        <a href="./pages/paysForm.php" class="btn btn-primary rounded py-2 px-4">Ajouter une nouvelle
-                            Pays</a>
-                    </div>
-
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center wow fadeInUp my-5" data-wow-delay="0.1s">
+                <div class="text-center">
+                    <h2 class=""><span class="text-primary text-uppercase mx-1">Liste des</span>Pays</h2>
+                </div>
+                <div class="text-end">
+                    <a href="./paysForm.php" class="btn btn-primary rounded py-2 px-4">Ajouter un nouveau Pays</a>
                 </div>
 
-                <div class="row g-4">
-                    <?php
+            </div>
 
-                    foreach ($data as $item) {
-                        dispayData($item);
-                    }
+            <div class="row g-4">
+                <?php
 
+                foreach ($pays as $item) {
                     ?>
-
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="room-item shadow rounded overflow-hidden ">
-
-                            <div class="p-4 mt-2 d-flex justify-content-center">
-                                <a href="./pages/form.php">
-                                    <button class="btn btn-sm btn-primary rounded py-2 px-4">Ajouter un
-                                        Ville</button></a>
+                            <div class="position-relative">
+                                <div
+                                    class="bg-primary text-white position-absolute start-0 end-0 bottom-0 p-2 d-flex align-items-center">
+                                    <h5 class="mb-0"><?= $item['nom'] ?></h5>
+                                </div>
+                            </div>
+                            <div class="p-4 mt-2">
+                                <div class="d-flex justify-content-between">
+                                    <p class="mb-0"><i
+                                            class="fa fa-map-marker-alt text-primary me-2"></i><?= $item['nom'] ?></p>
+                                    <p class="mb-0"><i
+                                            class="fa fa-users text-primary me-2"></i><?= number_format($item['population']) ?>
+                                    </p>
+                                </div>
+                                <div class="mt-2">
+                                    <p class="mb-0"><i class="fa fa-language text-primary me-2"></i><?= $item['langues'] ?>
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                    <?php
+                }
+
+                ?>
+
             </div>
         </div>
         <!-- Room End -->
 
 
         <!-- Footer Start -->
-        <footer class="bg-dark py-3">
+        <footer class="bg-dark py-3 mt-5">
             <div class="container">
                 <div class="copyright">
                     <div class="row">
@@ -137,7 +137,7 @@ include ".\db\controller.php";
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             <div class="footer-menu">
-                                <a href="">Home</a>
+                                <a href="">Ville</a>
                                 <a href="">Pays</a>
                             </div>
                         </div>
@@ -147,10 +147,6 @@ include ".\db\controller.php";
         </footer>
         <!-- Footer End -->
     </div>
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script src="assets/js/main.js"></script>
 </body>

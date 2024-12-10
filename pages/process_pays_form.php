@@ -10,7 +10,7 @@ if (isset($_POST['pays_nom']) && isset($_POST['pays_population']) && isset($_POS
     $pays_continent = $_POST['pays_continent'];
     $pays_langues = $_POST['pays_langues'];
 
-    $result = Continent_add($conx, $pays_nom, $pays_population, $pays_langues, $pays_continent);
+    $result = pays_add($conx, $pays_nom, $pays_population, $pays_langues, $pays_continent);
 
     if ($result) {
         header("Location: ../index.php");

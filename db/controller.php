@@ -101,7 +101,7 @@ function Continent_list($conx)
 
 // Ajouter un pays
 
-function Continent_add($conx, $pays_nom, $pays_population, $pays_langues, $pays_continent)
+function pays_add($conx, $pays_nom, $pays_population, $pays_langues, $pays_continent)
 {
 
     $sql_check = "SELECT nom FROM pays WHERE nom = '$pays_nom'";

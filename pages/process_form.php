@@ -3,8 +3,6 @@
 include "../db/controller.php";
 
 
-
-
 if (isset($_POST["ville_type"]) && isset($_POST["ville_pays"]) && isset($_POST["ville_nom"])) {
 
     $ville_type = $_POST["ville_type"];
