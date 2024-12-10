@@ -1,3 +1,11 @@
+<?php
+
+include "../db/controller.php";
+
+$pays = Pays_list($conx);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -83,14 +91,18 @@
                                     required>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" name="pays_nom" class="form-control" placeholder="Nom du Pays"
-                                    required>
+                                <select name="id_pays" class="form-select" id="pays">
+                                    <option value="" disabled selected>Pays</option>
+                                    <?php foreach ($pays as $item): ?>
+                                        <option value="<?= $item['id_pays'] ?>"><?= $item['nom'] ?></option>
+                                    <?php endforeach; ?>
+                                </select>
                             </div>
                             <div class="col-12">
                                 <select name="type" class="form-select" required>
                                     <option value="" disabled selected>Type</option>
                                     <option value="town">Town</option>
-                                    <option value="city">City</option>
+                                    <option value="capital">capital</option>
                                 </select>
                             </div>
                             <div class="col-12 text-center">

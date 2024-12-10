@@ -52,3 +52,17 @@ function dispayData($item)
     </div>
 ";
 }
+
+// form page
+
+function Pays_list($conx)
+{
+    $sql = "SELECT * FROM pays";
+    $result = $conx->query($sql);
+
+    if (!$result) {
+        die("Query failed: {$conx->error}");
+    }
+
+    return $result->num_rows > 0 ? $result : null;
+}
