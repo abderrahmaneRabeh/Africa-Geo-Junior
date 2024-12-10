@@ -66,3 +66,12 @@ function Pays_list($conx)
 
     return $result->num_rows > 0 ? $result : null;
 }
+
+// Ajouter une ville
+
+function Add_ville($conx, $ville_nom, $ville_pays, $ville_type)
+{
+    $sql = "INSERT INTO ville (nom, id_pays, type) VALUES ('$ville_nom', '$ville_pays', '$ville_type')";
+
+    return $conx->query($sql) === TRUE;
+}

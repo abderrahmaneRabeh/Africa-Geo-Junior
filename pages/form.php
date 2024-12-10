@@ -84,14 +84,14 @@ $pays = Pays_list($conx);
                         <h6 class="section-title text-center text-primary text-uppercase">Ajouter une Ville</h6>
                         <h1 class="mb-5"><span class="text-primary text-uppercase mx-1">Nouvelle</span>Ville</h1>
                     </div>
-                    <form action="process_form.php" method="POST" class="wow fadeInUp" data-wow-delay="0.2s">
+                    <form action="./process_form.php" method="POST" class="wow fadeInUp" data-wow-delay="0.2s">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <input type="text" name="ville_nom" class="form-control" placeholder="Nom de la Ville"
                                     required>
                             </div>
                             <div class="col-md-6">
-                                <select name="id_pays" class="form-select" id="pays">
+                                <select name="ville_pays" class="form-select" id="pays">
                                     <option value="" disabled selected>Pays</option>
                                     <?php foreach ($pays as $item): ?>
                                         <option value="<?= $item['id_pays'] ?>"><?= $item['nom'] ?></option>
@@ -99,7 +99,7 @@ $pays = Pays_list($conx);
                                 </select>
                             </div>
                             <div class="col-12">
-                                <select name="type" class="form-select" required>
+                                <select name="ville_type" class="form-select" required>
                                     <option value="" disabled selected>Type</option>
                                     <option value="town">Town</option>
                                     <option value="capital">capital</option>
