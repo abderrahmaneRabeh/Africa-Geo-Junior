@@ -46,7 +46,7 @@ include ".\db\controller.php";
         <div class="container-fluid bg-dark px-0 py-3">
             <div class="row gx-0" id="row_header">
                 <div class="col-md-3">
-                    <a href="/Africa-Geo-Junior/index.php"
+                    <a href="/index.php"
                         class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-start">
                         <h5 class="m-0 text-primary text-uppercase">Africa Géo-Junior</h5>
                     </a>
@@ -59,8 +59,7 @@ include ".\db\controller.php";
                         </button>
                         <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
                             <div class="navbar-nav py-0">
-                                <a href="/Africa-Geo-Junior/index.php" class="nav-item nav-link active">Home</a>
-                                <a href="index.html" class="nav-item nav-link active">Villes</a>
+                                <a href="/index.php" class="nav-item nav-link active">Villes</a>
                                 <a href="index.html" class="nav-item nav-link active">Pays</a>
 
                             </div>
@@ -68,8 +67,7 @@ include ".\db\controller.php";
                     </nav>
                 </div>
                 <div class="col-md-3 d-flex align-items-center justify-content-end">
-                    <a href="https://htmlcodex.com/hotel-html-template-pro"
-                        class="btn btn-primary rounded-lg py-2  px-md-5 d-none d-lg-block">LOGIN
+                    <a href="/index.php" class="btn btn-primary rounded-lg py-2  px-md-5 d-none d-lg-block">LOGIN
                         <i class="fa fa-arrow-right ms-3"></i>
                     </a>
                 </div>
@@ -80,17 +78,22 @@ include ".\db\controller.php";
         <!-- Room Start -->
         <div class="container-xxl py-5">
             <div class="container">
-                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h6 class="section-title text-center text-primary text-uppercase">Africa</h6>
-                    <h1 class="mb-5"><span class="text-primary text-uppercase mx-1">Pays</span>&<span
-                            class="text-primary text-uppercase mx-1">Villes</span></h1>
+                <div class="d-flex justify-content-between align-items-center wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="text-center">
+                        <h1 class=""><span class="text-primary text-uppercase mx-1">Africa'</span>S<span
+                                class="text-primary text-uppercase mx-1">Villes</span></h1>
+                    </div>
+                    <div class="text-end">
+                        <a href="./pages/form.php" class="btn btn-primary rounded py-2 px-4">Ajouter une nouvelle
+                            Ville</a>
+                    </div>
+
                 </div>
 
                 <div class="row g-4">
                     <?php
 
                     foreach ($data as $item) {
-
                         dispayData($item);
                     }
 
@@ -125,7 +128,6 @@ include ".\db\controller.php";
                         <div class="col-md-6 text-center text-md-end">
                             <div class="footer-menu">
                                 <a href="">Home</a>
-                                <a href="">Ville</a>
                                 <a href="">Pays</a>
                             </div>
                         </div>

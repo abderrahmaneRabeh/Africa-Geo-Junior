@@ -45,7 +45,7 @@ $pays = Pays_list($conx);
         <div class="container-fluid bg-dark px-0 py-3">
             <div class="row gx-0" id="row_header">
                 <div class="col-md-3">
-                    <a href="/Africa-Geo-Junior/index.php"
+                    <a href="../index.php"
                         class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-start">
                         <h5 class="m-0 text-primary text-uppercase">Africa Géo-Junior</h5>
                     </a>
@@ -58,8 +58,7 @@ $pays = Pays_list($conx);
                         </button>
                         <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
                             <div class="navbar-nav py-0">
-                                <a href="/Africa-Geo-Junior/index.php" class="nav-item nav-link active">Home</a>
-                                <a href="index.html" class="nav-item nav-link active">Villes</a>
+                                <a href="../index.php" class="nav-item nav-link active">Villes</a>
                                 <a href="index.html" class="nav-item nav-link active">Pays</a>
 
                             </div>
@@ -128,7 +127,6 @@ $pays = Pays_list($conx);
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             <div class="footer-menu">
-                                <a href="">Home</a>
                                 <a href="">Ville</a>
                                 <a href="">Pays</a>
                             </div>
