@@ -9,7 +9,7 @@ function List_des_villes($conx)
 {
 
     // $sql = "SELECT * FROM ville";
-    $sql = "SELECT ville.nom AS ville_nom, ville.type, pays.nom AS pays_nom FROM ville JOIN pays ON ville.id_pays = pays.id_pays";
+    $sql = "SELECT ville.id_ville, ville.nom AS ville_nom, ville.type, pays.nom AS pays_nom FROM ville JOIN pays ON ville.id_pays = pays.id_pays";
 
     $result = $conx->query($sql);
 
@@ -44,8 +44,8 @@ function dispayData($item)
                 </div>
                 <p class=\"text-body mb-3\">" . $item['pays_nom'] . "</p>
                 <div class=\"d-flex justify-content-between\">
-                    <a class=\"btn btn-sm btn-primary rounded py-2 px-4\" href=\"\">Update</a>
-                    <a class=\"btn btn-sm btn-dark rounded py-2 px-4\" href=\"\">Delete</a>
+                    <a class=\"btn btn-sm btn-primary rounded py-2 px-4\" href=\"../pages/updateVille.php?id=" . $item['id_ville'] . "\">Update</a>
+                    <a class=\"btn btn-sm btn-dark rounded py-2 px-4\" href=\"../pages/deleteVille.php?id=" . $item['id_ville'] . "\">Delete</a>
                 </div>
             </div>
         </div>
@@ -116,4 +116,13 @@ function Continent_add($conx, $pays_nom, $pays_population, $pays_langues, $pays_
 
     return $conx->query($sql) === TRUE;
 
+}
+
+// supprimer une ville
+
+function Delete_ville($conx, $ville_id)
+{
+    $sql = "DELETE FROM ville WHERE id_ville = '$ville_id'";
+
+    return $conx->query($sql) === TRUE;
 }

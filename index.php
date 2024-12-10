@@ -78,7 +78,7 @@ include ".\db\controller.php";
         <!-- Room Start -->
         <div class="container-xxl py-5">
             <div class="container">
-                <div class="d-flex justify-content-between align-items-center wow fadeInUp" data-wow-delay="0.1s">
+                <div class="d-flex justify-content-between align-items-center wow fadeInUp mb-5" data-wow-delay="0.1s">
                     <div class="text-center">
                         <h1 class=""><span class="text-primary text-uppercase mx-1">Africa'</span>S<span
                                 class="text-primary text-uppercase mx-1">Villes</span></h1>
