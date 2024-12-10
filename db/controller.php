@@ -140,9 +140,9 @@ function Get_Modify_ville($conx, $ville_id)
     return $ville;
 }
 
-function Update_ville($conx, $ville_id, $ville_langues, $ville_population, $ville_continent)
+function Update_ville($conx, $ville_id, $ville_nom, $ville_type, $ville_pays)
 {
-    $sql = "UPDATE ville SET langues = '$ville_langues', population = '$ville_population', id_continent = '$ville_continent' WHERE id_ville = '$ville_id'";
+    $sql = "UPDATE ville SET nom = '$ville_nom', type = '$ville_type', id_pays = '$ville_pays' WHERE id_ville = '$ville_id'";
 
     return $conx->query($sql) === TRUE;
 }

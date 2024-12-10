@@ -85,7 +85,7 @@ $pays = Pays_list($conx);
                         <h6 class="section-title text-center text-primary text-uppercase">Modifier une Ville</h6>
                         <h1 class="mb-5"><span class="text-primary text-uppercase mx-1">Modifier</span>Ville</h1>
                     </div>
-                    <form action="./process_form.php" method="POST" class="wow fadeInUp" data-wow-delay="0.2s">
+                    <form method="POST" class="wow fadeInUp" data-wow-delay="0.2s">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <input type="text" name="ville_nom" value="<?php echo $update_data['nom']; ?>"
@@ -154,3 +154,22 @@ $pays = Pays_list($conx);
 </body>
 
 </html>
+
+<?php
+
+
+if (isset($_POST["ville_nom"]) && isset($_POST["ville_pays"]) && isset($_POST["ville_type"])) {
+    $ville_nom = $_POST["ville_nom"];
+    $ville_pays = $_POST["ville_pays"];
+    $ville_type = $_POST["ville_type"];
+
+    $result = Update_ville($conx, $_GET["id"], $ville_nom, $ville_type, $ville_pays);
+
+    if ($result) {
+        echo '<script>window.location.href = "../index.php?msg=Ville mise à jour avec succé";</script>';
+    } else {
+        echo '<script>window.location.href = "../index.php?error=Une erreur s\'est produite lors de la mise à jour de la ville";</script>';
+    }
+
+
+}
