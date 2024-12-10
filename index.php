@@ -18,7 +18,7 @@ include ".\db\controller.php";
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="image/x-icon" rel="icon" href="assets/img/logo.png">
+    <link rel="icon" href="./assets/img/logo3.jpg" type="image/x-icon">
 
     <link
         href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
@@ -90,8 +90,8 @@ include ".\db\controller.php";
             <div class="container">
                 <div class="d-flex justify-content-between align-items-center wow fadeInUp mb-5" data-wow-delay="0.1s">
                     <div class="text-center">
-                        <h1 class=""><span class="text-primary text-uppercase mx-1">Africa'</span>S<span
-                                class="text-primary text-uppercase mx-1">Villes</span></h1>
+                        <h2 class=""><span class="text-primary text-uppercase mx-1">Africa'</span>S<span
+                                class="text-primary text-uppercase mx-1">Villes</span></h2>
                     </div>
                     <div class="text-end">
                         <a href="./pages/paysForm.php" class="btn btn-primary rounded py-2 px-4">Ajouter une nouvelle

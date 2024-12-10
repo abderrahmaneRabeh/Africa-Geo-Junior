@@ -17,7 +17,7 @@ $continent = Continent_list($conx);
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="image/x-icon" rel="icon" href="assets/img/logo.png">
+    <link rel="icon" href="../assets/img/logo3.jpg" type="image/x-icon">
 
     <link
         href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
