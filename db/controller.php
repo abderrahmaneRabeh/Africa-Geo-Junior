@@ -126,3 +126,23 @@ function Delete_ville($conx, $ville_id)
 
     return $conx->query($sql) === TRUE;
 }
+
+// update une ville
+
+function Get_Modify_ville($conx, $ville_id)
+{
+    $sql = "SELECT * FROM ville WHERE id_ville = '$ville_id'";
+
+    $result = $conx->query($sql);
+
+    $ville = $result->fetch_assoc();
+
+    return $ville;
+}
+
+function Update_ville($conx, $ville_id, $ville_langues, $ville_population, $ville_continent)
+{
+    $sql = "UPDATE ville SET langues = '$ville_langues', population = '$ville_population', id_continent = '$ville_continent' WHERE id_ville = '$ville_id'";
+
+    return $conx->query($sql) === TRUE;
+}
