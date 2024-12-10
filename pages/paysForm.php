@@ -1,9 +1,8 @@
 <?php
 
-include ".\db\controller.php";
-// displayListHtml($data);
+include "../db/controller.php";
 
-
+$continent = Continent_list($conx);
 
 ?>
 
@@ -34,10 +33,10 @@ include ".\db\controller.php";
     <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -46,7 +45,7 @@ include ".\db\controller.php";
         <div class="container-fluid bg-dark px-0 py-3">
             <div class="row gx-0" id="row_header">
                 <div class="col-md-3">
-                    <a href="/index.php"
+                    <a href="../index.php"
                         class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-start">
                         <h5 class="m-0 text-primary text-uppercase">Africa Géo-Junior</h5>
                     </a>
@@ -59,7 +58,7 @@ include ".\db\controller.php";
                         </button>
                         <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
                             <div class="navbar-nav py-0">
-                                <a href="/index.php" class="nav-item nav-link active">Villes</a>
+                                <a href="../index.php" class="nav-item nav-link active">Villes</a>
                                 <a href="index.html" class="nav-item nav-link active">Pays</a>
 
                             </div>
@@ -67,7 +66,8 @@ include ".\db\controller.php";
                     </nav>
                 </div>
                 <div class="col-md-3 d-flex align-items-center justify-content-end">
-                    <a href="/index.php" class="btn btn-primary rounded-lg py-2  px-md-5 d-none d-lg-block">LOGIN
+                    <a href="https://htmlcodex.com/hotel-html-template-pro"
+                        class="btn btn-primary rounded-lg py-2  px-md-5 d-none d-lg-block">LOGIN
                         <i class="fa fa-arrow-right ms-3"></i>
                     </a>
                 </div>
@@ -77,38 +77,46 @@ include ".\db\controller.php";
 
         <!-- Room Start -->
         <div class="container-xxl py-5">
-            <div class="container">
-                <div class="d-flex justify-content-between align-items-center wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="text-center">
-                        <h1 class=""><span class="text-primary text-uppercase mx-1">Africa'</span>S<span
-                                class="text-primary text-uppercase mx-1">Villes</span></h1>
+            <div class="container-xxl py-5">
+                <div class="container">
+                    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                        <h6 class="section-title text-center text-primary text-uppercase">Ajouter un Pays</h6>
+                        <h1 class="mb-5"><span class="text-primary text-uppercase mx-1">Nouveau</span>Pays</h1>
                     </div>
-                    <div class="text-end">
-                        <a href="./pages/paysForm.php" class="btn btn-primary rounded py-2 px-4">Ajouter une nouvelle
-                            Pays</a>
-                    </div>
-
-                </div>
-
-                <div class="row g-4">
-                    <?php
-
-                    foreach ($data as $item) {
-                        dispayData($item);
-                    }
-
-                    ?>
-
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="room-item shadow rounded overflow-hidden ">
-
-                            <div class="p-4 mt-2 d-flex justify-content-center">
-                                <a href="./pages/form.php">
-                                    <button class="btn btn-sm btn-primary rounded py-2 px-4">Ajouter un
-                                        Ville</button></a>
+                    <form action="./process_form.php" method="POST" class="wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <input type="text" name="pays_nom" class="form-control" placeholder="Nom du Pays"
+                                    required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="number" name="pays_population" class="form-control"
+                                    placeholder="Population" required>
+                            </div>
+                            <div class="col-md-12">
+                                <select name="pays_continent" class="form-select" required>
+                                    <option value="" disabled selected>Continent</option>
+                                    <?php foreach ($continent as $c) { ?>
+                                        <option value="<?= $c['nom'] ?>"><?= $c['nom'] ?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <select name="pays_langues[]" class="form-select" required>
+                                    <option value="" disabled selected>Langues</option>
+                                    <option value="français">Français</option>
+                                    <option value="anglais">Anglais</option>
+                                    <option value="espagnol">Espagnol</option>
+                                    <option value="allemand">Allemand</option>
+                                    <option value="Arabe">Arabe</option>
+                                    <!-- Ajouter d'autres options pour les langues -->
+                                </select>
+                            </div>
+                            <div class="col-12 text-center">
+                                <button type="submit" class="btn btn-primary rounded py-3 px-5">Ajouter</button>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -127,7 +135,7 @@ include ".\db\controller.php";
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             <div class="footer-menu">
-                                <a href="">Home</a>
+                                <a href="">Ville</a>
                                 <a href="">Pays</a>
                             </div>
                         </div>

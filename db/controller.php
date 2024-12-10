@@ -75,3 +75,17 @@ function Add_ville($conx, $ville_nom, $ville_pays, $ville_type)
 
     return $conx->query($sql) === TRUE;
 }
+
+// list des continents
+
+function Continent_list($conx)
+{
+    $sql = "SELECT * FROM continent";
+    $result = $conx->query($sql);
+
+    if (!$result) {
+        die("Query failed: {$conx->error}");
+    }
+
+    return $result->num_rows > 0 ? $result : null;
+}
