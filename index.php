@@ -76,6 +76,16 @@ include ".\db\controller.php";
         <!-- Header End -->
 
         <!-- Room Start -->
+        <?php if (isset($_GET['msg'])): ?>
+            <div class="alert alert-success alert-dismissible d-flex justify-content-around fade show text-center font-weight-bold"
+                role="alert">
+                <?php echo htmlspecialchars($_GET['msg']); ?>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="all: unset;">
+                    <span aria-hidden="true">X</span>
+                </button>
+            </div>
+        <?php endif; ?>
+
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="d-flex justify-content-between align-items-center wow fadeInUp mb-5" data-wow-delay="0.1s">
@@ -137,6 +147,10 @@ include ".\db\controller.php";
         </footer>
         <!-- Footer End -->
     </div>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script src="assets/js/main.js"></script>
 </body>

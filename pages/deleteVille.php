@@ -9,7 +9,7 @@ if (isset($_GET["id"])) {
     $result = Delete_ville($conx, $ville_id);
 
     if ($result) {
-        header("Location: ../index.php");
+        header("Location: ../index.php?msg=Ville supprimée");
         exit();
     } else {
         header("Location: ../pages/form.php");
