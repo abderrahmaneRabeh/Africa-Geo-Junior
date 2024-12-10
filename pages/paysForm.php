@@ -83,11 +83,17 @@ $continent = Continent_list($conx);
                         <h6 class="section-title text-center text-primary text-uppercase">Ajouter un Pays</h6>
                         <h1 class="mb-5"><span class="text-primary text-uppercase mx-1">Nouveau</span>Pays</h1>
                     </div>
-                    <form action="./process_form.php" method="POST" class="wow fadeInUp" data-wow-delay="0.2s">
+                    <form action="./process_pays_form.php" method="POST" class="wow fadeInUp" data-wow-delay="0.2s">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <input type="text" name="pays_nom" class="form-control" placeholder="Nom du Pays"
                                     required>
+                                <?php if (isset($_GET['error'])): ?>
+                                    <div class="alert alert-danger" role="alert">
+                                        <?php echo htmlspecialchars($_GET['error']); ?>
+                                    </div>
+                                <?php endif; ?>
+
                             </div>
                             <div class="col-md-6">
                                 <input type="number" name="pays_population" class="form-control"
@@ -97,12 +103,12 @@ $continent = Continent_list($conx);
                                 <select name="pays_continent" class="form-select" required>
                                     <option value="" disabled selected>Continent</option>
                                     <?php foreach ($continent as $c) { ?>
-                                        <option value="<?= $c['nom'] ?>"><?= $c['nom'] ?></option>
+                                        <option value="<?= $c['id_continent'] ?>"><?= $c['nom'] ?></option>
                                     <?php } ?>
                                 </select>
                             </div>
                             <div class="col-12">
-                                <select name="pays_langues[]" class="form-select" required>
+                                <select name="pays_langues" class="form-select" required>
                                     <option value="" disabled selected>Langues</option>
                                     <option value="français">Français</option>
                                     <option value="anglais">Anglais</option>

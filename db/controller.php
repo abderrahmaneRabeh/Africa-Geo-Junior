@@ -89,3 +89,22 @@ function Continent_list($conx)
 
     return $result->num_rows > 0 ? $result : null;
 }
+
+// Ajouter un pays
+
+function Continent_add($conx, $pays_nom, $pays_population, $pays_langues, $pays_continent)
+{
+
+    $sql_check = "SELECT nom FROM pays WHERE nom = '$pays_nom'";
+    $result_check = $conx->query($sql_check);
+
+    if ($result_check->num_rows > 0) {
+        header("Location: ../pages/paysForm.php?error=Country already exists");
+        exit();
+    }
+
+    $sql = "INSERT INTO pays (nom, population, langues, id_continent) VALUES ('$pays_nom', '$pays_population', '$pays_langues', '$pays_continent')";
+
+    return $conx->query($sql) === TRUE;
+
+}
