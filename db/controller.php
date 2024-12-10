@@ -71,6 +71,15 @@ function Pays_list($conx)
 
 function Add_ville($conx, $ville_nom, $ville_pays, $ville_type)
 {
+
+    $sql_check = "SELECT nom FROM ville WHERE nom = '$ville_nom'";
+    $result_check = $conx->query($sql_check);
+
+    if ($result_check->num_rows > 0) {
+        header("Location: ../pages/form.php?error=La ville existe déjà");
+        exit();
+    }
+
     $sql = "INSERT INTO ville (nom, id_pays, type) VALUES ('$ville_nom', '$ville_pays', '$ville_type')";
 
     return $conx->query($sql) === TRUE;

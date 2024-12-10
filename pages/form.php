@@ -88,6 +88,11 @@ $pays = Pays_list($conx);
                             <div class="col-md-6">
                                 <input type="text" name="ville_nom" class="form-control" placeholder="Nom de la Ville"
                                     required>
+                                <?php if (isset($_GET['error'])): ?>
+                                    <div class="alert alert-danger" role="alert">
+                                        <?php echo htmlspecialchars($_GET['error']); ?>
+                                    </div>
+                                <?php endif; ?>
                             </div>
                             <div class="col-md-6">
                                 <select name="ville_pays" class="form-select" id="pays">
