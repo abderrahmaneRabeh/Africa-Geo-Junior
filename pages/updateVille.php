@@ -60,8 +60,11 @@ $pays = Pays_list($conx);
                         </button>
                         <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
                             <div class="navbar-nav py-0">
-                                <a href="../index.php" class="nav-item nav-link active">Villes</a>
-                                <a href="index.html" class="nav-item nav-link active">Pays</a>
+                                <div class="navbar-nav py-0">
+                                    <a href="../index.php" class="nav-item nav-link active">Villes</a>
+                                    <a href="./listPays.php" class="nav-item nav-link active">Pays</a>
+                                    <a href="./statistiques.php" class="nav-item nav-link active">statistiques</a>
+                                </div>
 
                             </div>
                         </div>
@@ -140,8 +143,9 @@ $pays = Pays_list($conx);
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             <div class="footer-menu">
-                                <a href="">Ville</a>
-                                <a href="">Pays</a>
+                                <a href="../index.php">Ville</a>
+                                <a href="./listPays.php">Pays</a>
+                                <a href="./statistiques.php">Statistiques</a>
                             </div>
                         </div>
                     </div>

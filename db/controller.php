@@ -25,7 +25,7 @@ $data = List_des_villes($conx);
 function dispayData($item)
 {
     echo "
-        <div  class=\"col-lg-4 col-md-6 wow fadeInUp " . $item['type'] . " \" data-wow-delay=\"0.1s\">
+        <div id=\"" . $item['ville_nom'] . "\"  class=\"col-lg-4 col-md-6 wow fadeInUp " . $item['type'] . " \" data-wow-delay=\"0.1s\">
             <div class=\"room-item shadow rounded overflow-hidden\">
                 <div class=\"position-relative\">
                     <img class=\"img-fluid\" src=\"img/room-1.jpg\" alt=\"\">

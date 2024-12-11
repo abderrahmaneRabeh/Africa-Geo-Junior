@@ -61,6 +61,7 @@ include ".\db\controller.php";
                             <div class="navbar-nav py-0">
                                 <a href="/index.php" class="nav-item nav-link active">Villes</a>
                                 <a href="./pages/listPays.php" class="nav-item nav-link active">Pays</a>
+                                <a href="./pages/statistiques.php" class="nav-item nav-link active">statistiques</a>
 
                             </div>
                         </div>
@@ -88,7 +89,8 @@ include ".\db\controller.php";
 
         <div class="container-xxl py-5">
             <div class="container">
-                <div class="d-flex justify-content-between align-items-center wow fadeInUp mb-5" data-wow-delay="0.1s">
+                <div class="d-flex flex-wrap justify-content-between align-items-center wow fadeInUp mb-5"
+                    data-wow-delay="0.1s">
                     <div class="text-center">
                         <h2 class=""><span class="text-primary text-uppercase mx-1">Africa'</span>S<span
                                 class="text-primary text-uppercase mx-1">Villes</span></h2>
@@ -101,14 +103,14 @@ include ".\db\controller.php";
                 </div>
 
                 <div class="d-flex justify-content-between align-items-center mb-4">
-                    <div>
+                    <div class="d-flex align-items-center flex-wrap gap-2">
                         <button class="btn btn-outline-primary" onclick="filterBy('capital')">Capital</button>
                         <button class="btn btn-outline-primary me-2" onclick="filterBy('town')">Town</button>
                         <button class="btn btn-outline-primary px-5" onclick="filterBy('all')">Tout</button>
                     </div>
 
                     <div>
-                        <input type="text" id="searchBar" class="form-control" placeholder="Search..."
+                        <input type="text" id="searchBar" class="form-control px-4" placeholder="Search..."
                             onkeyup="search()">
                     </div>
                 </div>
@@ -150,8 +152,9 @@ include ".\db\controller.php";
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             <div class="footer-menu">
-                                <a href="">Home</a>
-                                <a href="">Pays</a>
+                                <a href="./index.php">Ville</a>
+                                <a href="./pages/listPays.php">Pays</a>
+                                <a href="./pages/statistiques.php">Statistiques</a>
                             </div>
                         </div>
                     </div>

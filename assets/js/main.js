@@ -14,7 +14,22 @@ function filterBy(filter) {
         capital.forEach(capital => capital.classList.remove('d-none'));
     }
 }
-console.log("test");
+
+function search() {
+
+    let searchBar = document.getElementById('searchBar');
+
+    let searchBarValue = searchBar.value.toLowerCase();
+
+    console.log(searchBarValue);
+
+
+    let towns = document.querySelectorAll('.town');
+    let capital = document.querySelectorAll('.capital');
+
+
+
+}
 
 window.setTimeout(function () {
     console.log(document.querySelectorAll('.town'));
