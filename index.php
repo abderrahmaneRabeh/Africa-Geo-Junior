@@ -100,6 +100,19 @@ include ".\db\controller.php";
 
                 </div>
 
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <button class="btn btn-outline-primary" onclick="filterBy('capital')">Capital</button>
+                        <button class="btn btn-outline-primary me-2" onclick="filterBy('town')">Town</button>
+                        <button class="btn btn-outline-primary px-5" onclick="filterBy('all')">Tout</button>
+                    </div>
+
+                    <div>
+                        <input type="text" id="searchBar" class="form-control" placeholder="Search..."
+                            onkeyup="search()">
+                    </div>
+                </div>
+
                 <div class="row g-4">
                     <?php
 
@@ -152,7 +165,7 @@ include ".\db\controller.php";
     <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <script src="assets/js/main.js"></script>
+    <script src="./assets/js/main.js"></script>
 </body>
 
 </html>
