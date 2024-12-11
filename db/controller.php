@@ -146,3 +146,12 @@ function Update_ville($conx, $ville_id, $ville_nom, $ville_type, $ville_pays)
 
     return $conx->query($sql) === TRUE;
 }
+
+// supprimer un pays
+
+function delete_pays($conx, $pays_id)
+{
+    $sql = "DELETE FROM pays WHERE id_pays = '$pays_id'";
+
+    return $conx->query($sql) === TRUE;
+}

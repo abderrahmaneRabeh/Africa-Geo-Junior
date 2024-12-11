@@ -108,10 +108,15 @@ $pays = Pays_list($conx);
                                             class="fa fa-users text-primary me-2"></i><?= number_format($item['population']) ?>
                                     </p>
                                 </div>
-                                <div class="mt-2">
+                                <div class="mt-2 d-flex justify-content-between">
                                     <p class="mb-0"><i class="fa fa-language text-primary me-2"></i><?= $item['langues'] ?>
                                     </p>
+                                    <a href="./deletePays.php?id=<?= $item['id_pays'] ?>"
+                                        class="btn btn-sm rounded-pill px-3">
+                                        <i class="fa fa-trash me-1"></i>
+                                    </a>
                                 </div>
+
                             </div>
                         </div>
                     </div>
