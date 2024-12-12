@@ -28,5 +28,15 @@ function search() {
     let capital = document.querySelectorAll('.capital');
 
 
-
 }
+
+// dropDown menu
+
+
+let dropDown = document.getElementById('dropdown_language');
+
+dropDown.addEventListener('click', () => {
+
+    let dropdownContent = document.getElementById('dropdown_content');
+    dropdownContent.classList.toggle('hide');
+})

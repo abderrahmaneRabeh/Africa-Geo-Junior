@@ -62,13 +62,19 @@ include ".\db\controller.php";
                                 <a href="/index.php" class="nav-item nav-link active">Villes</a>
                                 <a href="./pages/listPays.php" class="nav-item nav-link active">Pays</a>
                                 <a href="./pages/statistiques.php" class="nav-item nav-link active">statistiques</a>
-
+                                <div class="dropdown">
+                                    <a href="#" class="nav-item nav-link active" id="dropdown_language">Language</a>
+                                    <div class="dropdown-content hide" id="dropdown_content">
+                                        <div><a class="text-dark" href="/index.php?lang=fr">Français</a></div>
+                                        <div><a class="text-dark" href="/index.php?lang=en">Anglais</a></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </nav>
                 </div>
                 <div class="col-md-3 d-flex align-items-center justify-content-end">
-                    <a href="/index.php" class="btn btn-primary rounded-lg py-2  px-md-5 d-none d-lg-block">S'inscrire
+                    <a href="/index.php" class="btn btn-primary rounded-lg py-2  px-md-5 d-none d-lg-block">Se connecter
                         <i class="fa fa-arrow-right ms-3"></i>
                     </a>
                 </div>

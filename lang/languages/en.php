@@ -1,4 +1,6 @@
 <?php
 
 
-$lang = [];
+$lang = [
+    "se connecter" => "Login",
+];
