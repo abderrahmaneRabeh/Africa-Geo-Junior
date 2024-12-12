@@ -48,3 +48,13 @@ document.addEventListener('click', (e) => {
         dropdownContent.classList.add('hide');
     }
 })
+
+navbarCollapse.addEventListener('click', () => {
+
+    dropdownContent.classList.add('hide');
+})
+
+togglecollapse.addEventListener('click', () => {
+
+    navbarCollapseNav.classList.toggle('hide');
+})
