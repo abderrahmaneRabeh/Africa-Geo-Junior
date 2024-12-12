@@ -68,7 +68,7 @@ include ".\db\controller.php";
                     </nav>
                 </div>
                 <div class="col-md-3 d-flex align-items-center justify-content-end">
-                    <a href="/index.php" class="btn btn-primary rounded-lg py-2  px-md-5 d-none d-lg-block">LOGIN
+                    <a href="/index.php" class="btn btn-primary rounded-lg py-2  px-md-5 d-none d-lg-block">S'inscrire
                         <i class="fa fa-arrow-right ms-3"></i>
                     </a>
                 </div>
@@ -105,7 +105,7 @@ include ".\db\controller.php";
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <div class="d-flex align-items-center flex-wrap gap-2">
                         <button class="btn btn-outline-primary" onclick="filterBy('capital')">Capital</button>
-                        <button class="btn btn-outline-primary me-2" onclick="filterBy('town')">Town</button>
+                        <button class="btn btn-outline-primary me-2" onclick="filterBy('town')">Ville</button>
                         <button class="btn btn-outline-primary px-5" onclick="filterBy('all')">Tout</button>
                     </div>
 

@@ -155,3 +155,5 @@ function delete_pays($conx, $pays_id)
 
     return $conx->query($sql) === TRUE;
 }
+
+

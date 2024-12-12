@@ -30,7 +30,3 @@ function search() {
 
 
 }
-
-window.setTimeout(function () {
-    console.log(document.querySelectorAll('.town'));
-}, 1000)
