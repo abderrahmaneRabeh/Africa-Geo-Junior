@@ -18,5 +18,17 @@ function getLang()
 
     }
 
-    return "./languages/{$lang}.php";
+    return __DIR__ . "./languages/{$lang}.php";
+}
+
+function setLang($str)
+{
+
+    global $languges_dict;
+
+    if (!empty(([$str])) && !empty($languges_dict[$str])) {
+        return $languges_dict[$str];
+    }
+
+    return $str;
 }

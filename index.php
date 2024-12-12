@@ -1,7 +1,8 @@
 <?php
 
 include ".\db\controller.php";
-// displayListHtml($data);
+include "./lang/lang.php";
+
 
 
 
@@ -48,7 +49,7 @@ include ".\db\controller.php";
                 <div class="col-md-3">
                     <a href="/index.php"
                         class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-start">
-                        <h5 class="m-0 text-primary text-uppercase">Africa Géo-Junior</h5>
+                        <h5 class="m-0 text-primary text-uppercase"><?= setLang("Africa Géo-Junior") ?></h5>
                     </a>
                 </div>
                 <div class="col-md-6">
@@ -59,9 +60,11 @@ include ".\db\controller.php";
                         </button>
                         <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
                             <div class="navbar-nav py-0">
-                                <a href="/index.php" class="nav-item nav-link active">Villes</a>
-                                <a href="./pages/listPays.php" class="nav-item nav-link active">Pays</a>
-                                <a href="./pages/statistiques.php" class="nav-item nav-link active">statistiques</a>
+                                <a href="/index.php" class="nav-item nav-link active"><?= setLang(str: 'Villes') ?></a>
+                                <a href="./pages/listPays.php"
+                                    class="nav-item nav-link active"><?= setLang("Pays") ?></a>
+                                <a href="./pages/statistiques.php"
+                                    class="nav-item nav-link active"><?= setLang("statistiques") ?></a>
                                 <div class="dropdown">
                                     <a href="#" class="nav-item nav-link active" id="dropdown_language">Language</a>
                                     <div class="dropdown-content hide" id="dropdown_content">
@@ -74,7 +77,8 @@ include ".\db\controller.php";
                     </nav>
                 </div>
                 <div class="col-md-3 d-flex align-items-center justify-content-end">
-                    <a href="/index.php" class="btn btn-primary rounded-lg py-2  px-md-5 d-none d-lg-block">Se connecter
+                    <a href="/index.php"
+                        class="btn btn-primary rounded-lg py-2  px-md-5 d-none d-lg-block"><?= setLang("se connecter") ?>
                         <i class="fa fa-arrow-right ms-3"></i>
                     </a>
                 </div>
@@ -102,8 +106,8 @@ include ".\db\controller.php";
                                 class="text-primary text-uppercase mx-1">Villes</span></h2>
                     </div>
                     <div class="text-end">
-                        <a href="./pages/paysForm.php" class="btn btn-primary rounded py-2 px-4">Ajouter une nouvelle
-                            Pays</a>
+                        <a href="./pages/paysForm.php"
+                            class="btn btn-primary rounded py-2 px-4"><?= setLang("Ajouter une nouvelle Pays") ?></a>
                     </div>
 
                 </div>
@@ -111,8 +115,10 @@ include ".\db\controller.php";
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <div class="d-flex align-items-center flex-wrap gap-2">
                         <button class="btn btn-outline-primary" onclick="filterBy('capital')">Capital</button>
-                        <button class="btn btn-outline-primary me-2" onclick="filterBy('town')">Ville</button>
-                        <button class="btn btn-outline-primary px-5" onclick="filterBy('all')">Tout</button>
+                        <button class="btn btn-outline-primary me-2"
+                            onclick="filterBy('town')"><?= setLang(str: "Villes") ?></button>
+                        <button class="btn btn-outline-primary px-5"
+                            onclick="filterBy('all')"><?= setLang(str: "Tout") ?></button>
                     </div>
 
                     <div>
@@ -135,8 +141,8 @@ include ".\db\controller.php";
 
                             <div class="p-4 mt-2 d-flex justify-content-center">
                                 <a href="./pages/form.php">
-                                    <button class="btn btn-sm btn-primary rounded py-2 px-4">Ajouter un
-                                        Ville</button></a>
+                                    <button
+                                        class="btn btn-sm btn-primary rounded py-2 px-4"><?= setLang(str: "Ajouter un Ville") ?></button></a>
                             </div>
                         </div>
                     </div>

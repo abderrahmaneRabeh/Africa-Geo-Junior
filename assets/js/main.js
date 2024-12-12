@@ -34,9 +34,17 @@ function search() {
 
 
 let dropDown = document.getElementById('dropdown_language');
+let dropdownContent = document.getElementById('dropdown_content');
 
 dropDown.addEventListener('click', () => {
 
-    let dropdownContent = document.getElementById('dropdown_content');
     dropdownContent.classList.toggle('hide');
+})
+
+
+// hide dropdown when click outside
+document.addEventListener('click', (e) => {
+    if (e.target !== dropDown) {
+        dropdownContent.classList.add('hide');
+    }
 })

@@ -2,7 +2,6 @@
 
 // include "./connection.php";
 include __DIR__ . '/connection.php';
-
 $conx = DbConnection();
 
 function List_des_villes($conx)
@@ -44,8 +43,8 @@ function dispayData($item)
                 </div>
                 <p class=\"text-body mb-3\">" . $item['pays_nom'] . "</p>
                 <div class=\"d-flex justify-content-between\">
-                    <a class=\"btn btn-sm btn-primary rounded py-2 px-4\" href=\"../pages/updateVille.php?id=" . $item['id_ville'] . "\">Update</a>
-                    <a class=\"btn btn-sm btn-dark rounded py-2 px-4\" href=\"../pages/deleteVille.php?id=" . $item['id_ville'] . "\">Delete</a>
+                    <a class=\"btn btn-sm btn-primary rounded py-2 px-4\" href=\"../pages/updateVille.php?id=" . $item['id_ville'] . "\">Modifier</a>
+                    <a class=\"btn btn-sm btn-dark rounded py-2 px-4\" href=\"../pages/deleteVille.php?id=" . $item['id_ville'] . "\">Supprimer</a>
                 </div>
             </div>
         </div>
