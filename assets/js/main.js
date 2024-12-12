@@ -30,6 +30,8 @@ function search() {
 
 }
 
+
+
 // dropDown menu
 
 
@@ -49,9 +51,11 @@ document.addEventListener('click', (e) => {
     }
 })
 
-navbarCollapse.addEventListener('click', () => {
 
-    dropdownContent.classList.add('hide');
+navbarCollapse.addEventListener('click', (e) => {
+    if (!e.target.closest('#dropdown_language')) {
+        dropdownContent.classList.add('hide');
+    }
 })
 
 togglecollapse.addEventListener('click', () => {

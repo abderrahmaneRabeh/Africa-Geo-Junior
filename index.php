@@ -54,7 +54,7 @@ include "./lang/lang.php";
                 </div>
                 <div class="col-md-6">
                     <nav class="navbar navbar-expand-lg bg-dark navbar-dark p-3 p-lg-0">
-                        <div class=" navbar-collapse justify-content-center" id="navbarCollapse">
+                        <div class="justify-content-center" id="navbarCollapse">
                             <div class="navbar-nav py-0" id="navbarCollapseNav">
                                 <a href="/index.php" class="nav-item nav-link active"><?= setLang(str: 'Villes') ?></a>
                                 <a href="./pages/listPays.php"
@@ -70,9 +70,8 @@ include "./lang/lang.php";
                                 </div>
                             </div>
                         </div>
-                        <button type="button" class="navbar-toggler" id="togglecollapse"
-                            data-bs-target="#navbarCollapse">
-                            <span class="navbar-toggler-icon"></span>
+                        <button type="button" class="navbar-toggler" id="togglecollapse">
+                            <span class=" navbar-toggler-icon"></span>
                         </button>
                     </nav>
                 </div>
