@@ -1,6 +1,7 @@
 <?php
 
 include "../db/controller.php";
+include "../lang/lang.php";
 
 $pays = Pays_list($conx);
 
@@ -58,16 +59,24 @@ $pays = Pays_list($conx);
                         </button>
                         <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
                             <div class="navbar-nav py-0">
-                                <a href="../index.php" class="nav-item nav-link active">Villes</a>
-                                <a href="./listPays.php" class="nav-item nav-link active">Pays</a>
-                                <a href="./statistiques.php" class="nav-item nav-link active">statistiques</a>
+                                <a href="../index.php" class="nav-item nav-link active"><?= setLang("Villes") ?></a>
+                                <a href="./listPays.php" class="nav-item nav-link active"><?= setLang("Pays") ?></a>
+                                <a href="./statistiques.php"
+                                    class="nav-item nav-link active"><?= setLang("statistiques") ?></a>
+                                <div class="dropdown">
+                                    <a href="#" class="nav-item nav-link active" id="dropdown_language">Language ↓</a>
+                                    <div class="dropdown-content hide" id="dropdown_content">
+                                        <div><a class="text-dark" href="./listPays.php?lang=fr">Français</a></div>
+                                        <div><a class="text-dark" href="./listPays.php?lang=en">Anglais</a></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </nav>
                 </div>
                 <div class="col-md-3 d-flex align-items-center justify-content-end">
                     <a href="https://htmlcodex.com/hotel-html-template-pro"
-                        class="btn btn-primary rounded-lg py-2  px-md-5 d-none d-lg-block">LOGIN
+                        class="btn btn-primary rounded-lg py-2  px-md-5 d-none d-lg-block"><?= setLang("se connecter") ?>
                         <i class="fa fa-arrow-right ms-3"></i>
                     </a>
                 </div>
@@ -79,10 +88,13 @@ $pays = Pays_list($conx);
         <div class="container">
             <div class="d-flex justify-content-between align-items-center wow fadeInUp my-5" data-wow-delay="0.1s">
                 <div class="text-center">
-                    <h2 class=""><span class="text-primary text-uppercase mx-1">Liste des</span>Pays</h2>
+                    <h2 class=""><span class="text-primary text-uppercase mx-1">Liste
+                            des</span><?= setLang(str: "Villes") ?>
+                    </h2>
                 </div>
                 <div class="text-end">
-                    <a href="./paysForm.php" class="btn btn-primary rounded py-2 px-4">Ajouter un nouveau Pays</a>
+                    <a href="./paysForm.php"
+                        class="btn btn-primary rounded py-2 px-4"><?= setLang("Ajouter une nouvelle Pays") ?></a>
                 </div>
 
             </div>
@@ -154,7 +166,7 @@ $pays = Pays_list($conx);
         <!-- Footer End -->
     </div>
 
-    <script src="assets/js/main.js"></script>
+    <script src="../assets/js/main.js"></script>
 </body>
 
 </html>

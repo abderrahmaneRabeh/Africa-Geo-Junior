@@ -66,7 +66,7 @@ include "./lang/lang.php";
                                 <a href="./pages/statistiques.php"
                                     class="nav-item nav-link active"><?= setLang("statistiques") ?></a>
                                 <div class="dropdown">
-                                    <a href="#" class="nav-item nav-link active" id="dropdown_language">Language</a>
+                                    <a href="#" class="nav-item nav-link active" id="dropdown_language">Language ↓</a>
                                     <div class="dropdown-content hide" id="dropdown_content">
                                         <div><a class="text-dark" href="/index.php?lang=fr">Français</a></div>
                                         <div><a class="text-dark" href="/index.php?lang=en">Anglais</a></div>
