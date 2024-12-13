@@ -54,7 +54,7 @@ include "./lang/lang.php";
                 </div>
                 <div class="col-md-6">
                     <nav class="navbar navbar-expand-lg bg-dark navbar-dark p-3 p-lg-0">
-                        <div class="justify-content-center" id="navbarCollapse">
+                        <div class="navbar-collapse justify-content-center" id="navbarCollapse">
                             <div class="navbar-nav py-0" id="navbarCollapseNav">
                                 <a href="/index.php" class="nav-item nav-link active"><?= setLang(str: 'Villes') ?></a>
                                 <a href="./pages/listPays.php"
