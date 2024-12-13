@@ -4,6 +4,8 @@ include "../db/controller.php";
 
 $pays = Pays_list($conx);
 
+$data = List_des_villes($conx);
+
 
 ?>
 
@@ -79,55 +81,9 @@ $pays = Pays_list($conx);
 
         <!-- Room Start -->
 
-        <div class="container-fluid py-5">
-            <div class="container">
-                <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
-                    <h5 class="fw-bold text-primary text-uppercase">Statistiques</h5>
-                </div>
-                <div class="row g-5">
-                    <div class="col-12">
-                        <div class="bg-light rounded h-100 p-4">
-                            <canvas id="myChart"></canvas>
-                            <script>
-                                var ctx = document.getElementById('myChart').getContext('2d');
-                                var myChart = new Chart(ctx, {
-                                    type: 'bar',
-                                    data: {
-                                        labels: <?php echo json_encode($labels); ?>,
-                                        datasets: [{
-                                            label: 'Villes',
-                                            data: <?php echo json_encode($counts); ?>,
-                                            backgroundColor: [
-                                                'rgba(255, 99, 132, 0.2)',
-                                                'rgba(54, 162, 235, 0.2)',
-                                                'rgba(255, 206, 86, 0.2)',
-                                                'rgba(75, 192, 192, 0.2)',
-                                                'rgba(153, 102, 255, 0.2)',
-                                                'rgba(255, 159, 64, 0.2)'
-                                            ],
-                                            borderColor: [
-                                                'rgba(255, 99, 132, 1)',
-                                                'rgba(54, 162, 235, 1)',
-                                                'rgba(255, 206, 86, 1)',
-                                                'rgba(75, 192, 192, 1)',
-                                                'rgba(153, 102, 255, 1)',
-                                                'rgba(255, 159, 64, 1)'
-                                            ],
-                                            borderWidth: 1
-                                        }]
-                                    },
-                                    options: {
-                                        scales: {
-                                            y: {
-                                                beginAtZero: true
-                                            }
-                                        }
-                                    }
-                                });
-                            </script>
-                        </div>
-                    </div>
-                </div>
+        <div class="container-fluid pt-4 px-4">
+            <div class="bg-light rounded p-4">
+                <canvas id="myChart"></canvas>
             </div>
         </div>
         <!-- Room End -->
@@ -158,6 +114,44 @@ $pays = Pays_list($conx);
     </div>
 
     <script src="assets/js/main.js"></script>
+
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>
